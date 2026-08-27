@@ -1,0 +1,42 @@
+name: SNS自動投稿
+
+on:
+  schedule:
+    # 毎日 09:00 UTC = 日本時間 18:00
+    - cron: "0 9 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: 投稿を実行
+        working-directory: src
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+        run: python main.py
+
+      - name: 投稿済みフラグをコミット
+        run: |
+          git config user.name "sns-auto-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add content/photo_manifest.json
+          git diff --cached --quiet || git commit -m "chore: 投稿済みフラグを更新"
+          git push

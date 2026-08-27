@@ -1,0 +1,33 @@
+{
+  "store_name": "スナックシーサー",
+  "area": "宮崎県宮崎市",
+  "address": "宮崎市三輪ビル5階 ※要確認（Instagram自動取得・未検証）",
+  "nearest_station_or_landmark": "",
+  "phone": "",
+  "business_hours": "",
+  "closed_days": "",
+  "seating": "",
+  "price_range": {
+    "table_charge_male": "3,500円 ※要確認（Instagram自動取得・未検証）",
+    "table_charge_female": "3,000円 ※要確認（Instagram自動取得・未検証）",
+    "bottle_keep": "",
+    "notes": ""
+  },
+  "menu_highlights": [],
+  "staff_intro": [],
+  "target_customer": "地元常連・観光客・出張族など、想定客層を記入",
+  "brand_voice": {
+    "tone": "親しみやすい・沖縄シーサーの縁起物モチーフを活かした温かい雰囲気",
+    "first_person": "",
+    "ng_words": []
+  },
+  "hashtags_always": [
+    "#宮崎",
+    "#宮崎スナック",
+    "#スナックシーサー"
+  ],
+  "sns_accounts": {
+    "instagram_new_account_handle": "",
+    "x_new_account_handle": ""
+  }
+}
