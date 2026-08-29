@@ -8,7 +8,6 @@ from pathlib import Path
 
 from caption_generator import generate_caption, load_store_profile
 import instagram_publisher
-import threads_publisher
 import x_publisher
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -44,10 +43,6 @@ def main() -> None:
     ig_caption = generate_caption(store, target, "instagram")
     ig_id = instagram_publisher.publish_photo(public_image_url(target["file"]), ig_caption)
     print(f"Instagram投稿完了: {ig_id}")
-
-    threads_caption = generate_caption(store, target, "threads")
-    threads_id = threads_publisher.publish_photo(public_image_url(target["file"]), threads_caption)
-    print(f"Threads投稿完了: {threads_id}")
 
     x_caption = generate_caption(store, target, "x")
     x_id = x_publisher.publish_photo(str(local_path), x_caption)
