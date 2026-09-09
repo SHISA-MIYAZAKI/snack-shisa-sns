@@ -1,19 +1,19 @@
 {
   "store_name": "スナックシーサー",
   "area": "宮崎県宮崎市",
-  "address": "宮崎市三輪ビル5階 ※要確認（Instagram自動取得・未検証）",
+  "address": "〒880-0001 宮崎県宮崎市橘通西3丁目8-5 三輪ビル5F",
   "nearest_station_or_landmark": "",
-  "phone": "",
-  "business_hours": "",
-  "closed_days": "",
-  "seating": "",
+  "phone": "070-2347-2780",
+  "business_hours": "20:00-28:00（26:30ラストイン）",
+  "closed_days": "日曜（不定休あり、要確認）",
+  "seating": "カウンター6席、ボックス席5〜6名",
   "price_range": {
-    "table_charge_male": "3,500円 ※要確認（Instagram自動取得・未検証）",
-    "table_charge_female": "3,000円 ※要確認（Instagram自動取得・未検証）",
-    "bottle_keep": "",
-    "notes": ""
+    "table_charge_male": "3,500円（セット90分）",
+    "table_charge_female": "3,000円（セット90分）",
+    "bottle_keep": "3,500円（時間無制限）",
+    "notes": "カラオケ 1曲200円 or 歌い放題1000円"
   },
-  "menu_highlights": [],
+  "menu_highlights": ["泡盛（残波・菊之露・久米島の久米仙・守禮 など）", "オリオンビール"],
   "staff_intro": [],
   "target_customer": "地元常連・観光客・出張族など、想定客層を記入",
   "brand_voice": {
@@ -24,7 +24,8 @@
   "hashtags_always": [
     "#宮崎",
     "#宮崎スナック",
-    "#スナックシーサー"
+    "#スナックシーサー",
+    "#JAM'Sがいるお店"
   ],
   "sns_accounts": {
     "instagram_new_account_handle": "",
