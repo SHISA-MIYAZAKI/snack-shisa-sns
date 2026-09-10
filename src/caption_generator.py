@@ -44,7 +44,8 @@ def generate_caption(store: dict, photo: dict, platform: str) -> str:
         max_tokens=400,
         messages=[{"role": "user", "content": build_prompt(store, photo, platform)}],
     )
-    return message.content[0].text.strip()
+    text_block = next(block for block in message.content if block.type == "text")
+    return text_block.text.strip()
 
 
 if __name__ == "__main__":
