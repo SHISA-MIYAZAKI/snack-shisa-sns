@@ -42,6 +42,7 @@ def generate_caption(store: dict, photo: dict, platform: str) -> str:
     message = client.messages.create(
         model="claude-sonnet-5",
         max_tokens=400,
+        thinking={"type": "disabled"},
         messages=[{"role": "user", "content": build_prompt(store, photo, platform)}],
     )
     text_block = next(block for block in message.content if block.type == "text")
