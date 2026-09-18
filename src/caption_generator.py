@@ -14,8 +14,9 @@ def load_store_profile() -> dict:
 
 
 def build_prompt(store: dict, photo: dict, platform: str) -> str:
-    max_len = "120字以内" if platform == "x" else "500字以内" if platform == "threads" else "300字以内"
+    max_len = "160字以内" if platform == "x" else "500字以内" if platform == "threads" else "300字以内"
     always_tags = " ".join(store.get("hashtags_always", []))
+    main_account = store.get("sns_accounts", {}).get("instagram_main_account_handle", "")
     return f"""あなたは宮崎のスナック「{store['store_name']}」のSNS担当です。
 以下の情報をもとに、{platform.upper()}投稿用の日本語キャプションを1案作成してください。
 
@@ -32,6 +33,8 @@ def build_prompt(store: dict, photo: dict, platform: str) -> str:
 【条件】
 - {max_len}
 - 誇張・虚偽の表現（実在しない在庫状況や誤解を招く価格表記など）は書かない
+- 本文中に、本家Instagramアカウント「@{main_account}」への誘導（例:「本家アカウントはこちら→@{main_account}」）を一言入れる
+- 最後に必ず「※このアカウントの投稿はAI（Claude）が自動生成しています」という一文を入れる
 - 最後に必ずこのハッシュタグを含める: {always_tags}
 - キャプション本文のみを出力し、前置きや説明文は書かない
 """
