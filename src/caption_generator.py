@@ -15,7 +15,8 @@ def load_store_profile() -> dict:
 
 def build_prompt(store: dict, photo: dict, platform: str) -> str:
     max_len = "160字以内" if platform == "x" else "500字以内" if platform == "threads" else "300字以内"
-    always_tags = " ".join(store.get("hashtags_always", []))
+    all_tags = store.get("hashtags_always", []) + photo.get("hashtags_extra", [])
+    always_tags = " ".join(all_tags)
     main_account = store.get("sns_accounts", {}).get("instagram_main_account_handle", "")
     return f"""あなたは宮崎のスナック「{store['store_name']}」のSNS担当です。
 以下の情報をもとに、{platform.upper()}投稿用の日本語キャプションを1案作成してください。
